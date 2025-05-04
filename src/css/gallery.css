@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.gallery {
+  padding-top: 15px;
+  max-width: 1128px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.gallery-image {
+  width: 320px;
+  height: 200px;
+  border-radius: 10px;
+
+  transition: all 150ms ease-in-out;
+}
+
+.gallery-image:hover {
+  scale: 104%;
+}
+
+.sl-wrapper {
+  background-color: rgba(46, 47, 66, 0.8);
+}
