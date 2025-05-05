@@ -27,6 +27,16 @@ body {
 main {
   flex-grow: 1;
 }
-main:has(.back-link) {
+/* main:has(.back-link) {
   text-align: center;
+} */
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.back-link:hover,
+.nav-link:hover {
+  color: #4e75ff;
 }

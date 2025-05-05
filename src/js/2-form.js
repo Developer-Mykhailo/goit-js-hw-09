@@ -9,8 +9,6 @@ const formData = {
 const KEY_LS = 'feedback-form-state';
 
 const formElem = document.querySelector('.feedback-form');
-const emailElem = document.querySelector('[name="email"]');
-const messageElem = document.querySelector('[name="message"]');
 
 formElem.addEventListener('input', onFormEvent);
 formElem.addEventListener('submit', onFormSubmit);
@@ -28,14 +26,17 @@ function onFormEvent(event) {
 const saveData = JSON.parse(localStorage.getItem(KEY_LS));
 
 if (saveData) {
-  emailElem.value = saveData.email || '';
-  messageElem.value = saveData.message || '';
+  formElem.elements.email.value = saveData.email || '';
+  formElem.elements.message.value = saveData.message || '';
+
+  formData.email = saveData.email || '';
+  formData.message = saveData.message || '';
 }
 
 function onFormSubmit(event) {
   event.preventDefault();
 
-  if (formData.email === '' || formData.message === '') {
+  if (!formData.email || !formData.message) {
     iziToast.warning({
       message: 'Fill please all fields',
       position: 'center',
